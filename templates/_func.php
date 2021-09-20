@@ -1407,16 +1407,16 @@ function renderPlantHireLine($item, $locations, $title = false) {
 
 function getEquipmentCategories($categories) {
     $out = nb()->htmlWrap(
-            $categories->each('<div data-filter="{name}" class="uk-button category-filter uk-text-center">'
+            $categories->each('<div><button data-filter="{name}" class="uk-button category-filter uk-text-center">'
                     . '<img src="{icon.url}"><br>'
                     . '<span>{title}</span>'
-                    . '</div>'),
-            '<div class="uk-margin uk-text-center category-filters uk-flex uk-flex-around">');
+                    . '</button></div>'),
+            '<div class="uk-margin uk-text-center category-filters uk-grid uk-grid-small uk-child-width-expand@s" data-uk-grid>');
     return $out;
 }
 function getEquipmentLocations($locations) {
     $out = nb()->htmlWrap(
-            $locations->each('<div data-filter="{name}" class="uk-button uk-button-large location-filter">{title}</div>'),
-            '<div class="uk-margin uk-text-center location-filters uk-grid uk-grid-small uk-child-width-expand@s location-filters" data-uk-grid>');
+            $locations->each('<div><button data-filter="{name}" class="uk-button uk-button-large location-filter uk-text-center uk-width-1-1">{title}</button></div>'),
+            '<div class="uk-margin uk-text-center location-filters uk-grid uk-grid-small uk-child-width-expand@s" data-uk-grid>');
     return $out;
 }

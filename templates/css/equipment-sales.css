@@ -1,36 +1,138 @@
 .category-filters {
 
-    text-align: center;
+	text-align: center;
 }
+
 .category-filters span {
-    font-size: 14px;
+	font-size: 14px;
 }
 
 .category-filters img {
-    width: 100%;
-    max-width: 130px;
+	width: 100%;
+	max-width: 130px;
 }
 
-.category-filters div {
-    background-color: #fef200;
-    padding-bottom: 10px;
-    margin-bottom: 7px;
-    width: 180px;
-    height: 180px;
-}
-.category-filters div.is-active, .category-filters div:hover {
-    border-bottom: 7px solid #db1a1b;
-    margin-bottom: 0;
+.category-filters button {
+	background-color: #fef200;
+	padding-bottom: 10px;
+	/* margin-bottom: 7px; */
+	width: 180px;
+	height: 180px;
+	position: relative;
 }
 
-.location-filters div {
-    background-color: #fff !important;
-    border: 2px solid #000;
-    margin-bottom: 4px;
-    margin-top: 4px;
+.category-filters button::after {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	content: '';
+	background-color: #db1a1b;
+	height: 7px;
+	bottom: 0;
+	opacity: 0;
+	pointer-events: none;
 }
-.location-filters .is-active, .location-filters div:hover {
-    background-color: #fff !important;
-    border-bottom: 4px solid #db1a1b;
-    margin-bottom: 4px;
+
+.location-filters button::after {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	content: '';
+	background-color: #db1a1b;
+	height: 4px;
+	bottom: -2px;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.category-filters button.is-active::after,
+.category-filters button:hover::after {
+	/* border-bottom: 7px solid #db1a1b;
+    margin-bottom: 0; */
+	opacity: 1;
+	pointer-events: all;
+}
+
+.location-filters button {
+	background-color: #fff !important;
+	border: 2px solid #000;
+	margin-bottom: 4px;
+	margin-top: 4px;
+	position: relative;
+}
+
+.location-filters .is-active::after,
+.location-filters button:hover::after {
+	/* background-color: #fff !important;
+	border-bottom: 4px solid #db1a1b; */
+	opacity: 1;
+	pointer-events: all;
+}
+
+.equipment_sales .nb-json>div>div {
+	background-color: #f8f8f8;
+}
+
+.equipment_sales .nb-json>div>div>div:first-of-type {
+	background-color: #edeef0;
+}
+
+.equipment_sales .nb-json>div>div>div:not(:first-of-type) {
+	padding: 25px 40px 40px;
+}
+
+.equipment_sales .hero-section .hero-inner {
+	height: 560px;
+}
+
+.equipment_sales .hero-section .hero-content {
+	padding-top: 80px;
+	width: 100%;
+}
+
+.equipment_sales .hero-section .uk-text-lead {
+	color: #fff;
+}
+
+.equipment_sales .page-content {
+	background-color: #db1a1b;
+	margin-bottom: 50px;
+}
+
+@media (min-width: 960px) {
+	.equipment_sales .page-content {
+		margin-bottom: 130px;
+		position: relative;
+	}
+	.equipment_sales .hero-section .hero-content {
+		padding-top: 214px;
+	}
+}
+
+@media (min-width: 1600px) {
+
+	.equipment_sales .page-content::before,
+	.equipment_sales .page-content::after {
+		top: 120px;
+		position: absolute;
+		content: url('../img/logo.png');
+		width: 90px;
+		height: auto;
+		display: block;
+	}
+
+	.equipment_sales .page-content::before {
+		left: 40px;
+	}
+
+	.equipment_sales .page-content::after {
+		right: 40px;
+	}
+}
+
+@media (max-width: 960px) {
+	.equipment_sales .hero-section .uk-text-lead {
+		font-size: 16px;
+		line-height: 32px;
+	}
 }

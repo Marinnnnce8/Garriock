@@ -71,23 +71,22 @@ include("./inc/head.php");
         
 <?php if($page->wrapContent): ?>
     <section id="wrapper-content" class="wrapper-content">
-	<div class="hero-section full-screen">
+	<div class="hero-section">
             <div class="hero-inner hero-gradient" data-src="<?= $page->imageBanner->url?>" data-srcset="<?=$page->imageBanner->url?> 1024w, <?=$page->imageBanner->url?> 1920w" data-sizes="100vw" 
                  data-uk-img="">
                 <div class="uk-container">
-                    <div class="vertical-center">
-                        <div class="hero-content">
-                            <h1 class="uk-heading-hero uk-light underlined"><?=$page->titlePage?></h1>
-                            <?= renderBreadCrumbs($page)?>
-                        </div>
-                    </div>
+					<div class="hero-content uk-width-1-1">
+						<h1 class="uk-heading-hero uk-light underlined"><?=$page->titlePage?></h1>
+						<?= renderBreadCrumbs($page)?>
+						<p class="uk-margin-large-top uk-text-lead">Garriock Bros.Ltd. used equipment has been sold internationally as well as nationally to clients including local authorities, quarries, farmers, building and civil engineering contractors.</p>
+					</div>
                 </div>
             </div>
         </div>
         
         <div class="page-content">
         <?php if (!in_array($page->template->name, ['study', 'branch', 'service'])): ?>
-            <div class="uk-container lift-me-up uk-background-default">
+            <div class="uk-container uk-background-default">
                 <div class="main-grid">
                     <div class="content uk-margin-large-bottom">
                         

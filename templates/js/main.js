@@ -136,11 +136,12 @@ $.extend($nb.json.render, {
                 $nb.htmlWrap(
                         slideshow + 
                         commentSection,
-                        '<div class= "uk-width-1-2">'
+                        '<div>'
                     ) +
                 $nb.htmlWrap(
-                    '<img src="'+ $item.category.icon +'">' + $item.category.title +
-                    $item.equipment_location +'<br>'+
+					'<div class="uk-flex uk-flex-middle uk-flex-between"><div class="uk-flex"><img src="' + $item.category.icon + '">' + '<span class="uk-text-uppercase uk-text-bold uk-flex uk-flex-bottom">'+
+					$item.category.title + '</span></div>' + '<span class="uk-text-uppercase uk-text-bold">'+
+					$item.equipment_location  + '</span></div>' +'<br>'+
                     $item.category.title +'<br>'+
                     $item.headline +'<br>'+
                     $item.duration + '<br>' +
@@ -150,9 +151,9 @@ $.extend($nb.json.render, {
                     $item.equipment_condition +'<br>'+
                     $item.contact.email + ' ' + $item.contact.title + '<br>'+
                     $item.title +'<br>',
-                    '<div class= "uk-width-1-2">'
+                    '<div>'
                     ),
-            '<div class="uk-margin-large uk-width-1-1 uk-grid" data-uk-grid>');
+            '<div class="uk-margin-large uk-width-1-1 uk-card uk-grid-collapse uk-child-width-1-2@s" data-uk-grid>');
         },
         
 	search: function($items, $config) {
